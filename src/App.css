@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+}
+
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.boxContainer {
+  justify-content: center;
+  width: 100%;
+}
+.theBox {
+  height: 200px;
+  width: 400px;
+  margin: auto;
+  /* background-color: #61dafb; */
+}
+.title {
+  width: 100%;
+}
+.result-box {
+  margin: 30px;
+  font-size: 25px;
+}
+.answers {
+  margin: 20px;
+  font-size: 25px;
+}
