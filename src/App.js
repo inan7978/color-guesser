@@ -5,7 +5,7 @@ import { render } from "@testing-library/react";
 function App() {
   const [color, setColor] = useState("#000000");
   const [answers, setAnswers] = useState([]);
-  const [result, setResult] = useState(<h3>See result here.</h3>);
+  const [result, setResult] = useState(null);
 
   const shuffle = (array) => {
     let currentIndex = array.length,
@@ -105,11 +105,11 @@ function App() {
   const resultHandler = (boolean) => {
     if (boolean) {
       console.log("You got it!");
-      setResult(<h3 style={{ color: "green" }}>Correct!</h3>);
+      setResult(true);
       makeLevel();
     } else {
       console.log("Not quite...");
-      setResult(<h3 style={{ color: "red" }}>Nope.</h3>);
+      setResult(false);
     }
   };
 
@@ -120,7 +120,15 @@ function App() {
         <div className="theBox" style={{ background: color }}></div>
       </div>
       <div>{answers}</div>
-      <div>{result}</div>
+      <div>
+        {result === null ? (
+          <h3>See result here.</h3>
+        ) : result ? (
+          <h3 style={{ color: "green" }}>Correct!</h3>
+        ) : (
+          <h3 style={{ color: "red" }}>Nope.</h3>
+        )}
+      </div>
     </div>
   );
 }
