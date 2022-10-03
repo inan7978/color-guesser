@@ -1,6 +1,5 @@
-import "./App.css";
 import { useState, useEffect } from "react";
-import { render } from "@testing-library/react";
+import "./App.css";
 
 function App() {
   const [color, setColor] = useState("#000000");
@@ -62,38 +61,26 @@ function App() {
   };
 
   const makeOptions = (currColor) => {
+    // create default array
     let temp = [
-      <button
-        className="answers"
-        onClick={() => {
-          resultHandler(true);
-        }}
-        key={currColor}
-      >
-        {currColor}
-      </button>,
-      <button
-        onClick={() => {
-          resultHandler(false);
-        }}
-        className="answers"
-        key={"0"}
-      >
-        {randomColor()}
-      </button>,
-      <button
-        onClick={() => {
-          resultHandler(false);
-        }}
-        className="answers"
-        key={"1"}
-      >
-        {randomColor()}
-      </button>,
+      {
+        color: currColor,
+        correct: true,
+      },
+      {
+        color: randomColor(),
+        correct: false,
+      },
+      {
+        color: randomColor(),
+        correct: false,
+      },
     ];
-    shuffle(temp);
-    console.log(temp);
-    setAnswers(temp);
+
+    const final = shuffle(temp);
+
+    console.log(final);
+    setAnswers(final);
   };
   const makeLevel = () => {
     const temp = randomColor();
@@ -119,7 +106,20 @@ function App() {
       <div className="boxContainer">
         <div className="theBox" style={{ background: color }}></div>
       </div>
-      <div>{answers}</div>
+      <div>
+        {answers.map((button, index) => (
+          <button
+            // use the index as the key, append a string to guarantee its unique
+            key={`button-${index}`}
+            onClick={() => {
+              resultHandler(button.correct);
+            }}
+            className="answers"
+          >
+            {button.color}
+          </button>
+        ))}
+      </div>
       <div>
         {result === null ? (
           <h3>See result here.</h3>
