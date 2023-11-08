@@ -1,6 +1,5 @@
 import "./App.css";
 import { useState, useEffect } from "react";
-import { render } from "@testing-library/react";
 
 function App() {
   const [color, setColor] = useState("#000000");
@@ -29,6 +28,7 @@ function App() {
 
   useEffect(() => {
     makeLevel();
+    // eslint-disable-next-line
   }, []);
 
   const randomColor = () => {
