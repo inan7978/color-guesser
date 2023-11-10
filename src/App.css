@@ -27,4 +27,12 @@
 .answers {
   margin: 20px;
   font-size: 25px;
+  width: 135px;
+}
+.explanation {
+  max-width: 500px;
+  margin: auto;
+}
+.lecture {
+  font-size: larger;
 }

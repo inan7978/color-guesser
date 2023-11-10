@@ -5,6 +5,8 @@ function App() {
   const [color, setColor] = useState("#000000");
   const [answers, setAnswers] = useState([]);
   const [result, setResult] = useState(null);
+  const [correct, setCorrect] = useState(0);
+  const [incorrect, setIncorrect] = useState(0);
 
   const shuffle = (array) => {
     let currentIndex = array.length,
@@ -81,11 +83,15 @@ function App() {
 
   const resultHandler = (boolean) => {
     if (boolean) {
+      setCorrect(correct + 1);
       console.log("Correct!");
+      console.log("Num correct: " + correct);
       setResult(true);
       makeLevel();
     } else {
+      setIncorrect(incorrect + 1);
       console.log("Incorrect.");
+      console.log("Num incorrect: " + incorrect);
       setResult(false);
     }
   };
@@ -121,6 +127,35 @@ function App() {
           <h3 style={{ color: "red" }}>Incorrect.</h3>
         )}
       </div>
+      <h3>{`Correct: ${correct} | Incorrect: ${incorrect}`}</h3>
+      <section>
+        <article>
+          <header>
+            <h2>How do you determine this?</h2>
+            <div className="explanation">
+              <p class="lecture">
+                It is pretty straight forward. Each pair of characters represent
+                a number ranging between 0 and 255 in hexadecimal format. You
+                may be familiar with RGB. RGB is essentially a way to tell the
+                computer what color you want to see. For example lets look at
+                #34AD3F. the first pair, 34 is in Hexadecimal Notation (HEX).
+                This converted to base 10 is 52. The second pair is AD in HEX
+                which equates to 173 in base 10. The third pair is 3F in HEX
+                which equates to 63 in base 10. <br /> <br />
+                We now have our three values: 52 173 63 . Remember the RGB
+                mentioned earlier and how each pair is a value between 0 and
+                255? Well, the position of the pair in the HEX value is
+                respective to the order of the RGB acronym. This means that we
+                have a value of 52 for R, a value of 173 for G, and a value of
+                63 for B. We now know how much Red Green and Blue (RGB) our
+                color contains. Based on this we can get an idea of what the
+                color will be. <br />
+                <br />I hope this helped 👌
+              </p>
+            </div>
+          </header>
+        </article>
+      </section>
     </div>
   );
 }
