@@ -150,7 +150,7 @@ function App() {
                 63 for B. We now know how much Red Green and Blue (RGB) our
                 color contains. Based on this we can get an idea of what the
                 color will be. <br />
-                <br />I hope this helped 👌
+                <br />I hope this helped! 👌
               </p>
             </div>
           </header>
