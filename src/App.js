@@ -135,11 +135,10 @@ function App() {
             <div className="explanation">
               <p class="lecture">
                 It is pretty straight forward. Each pair of characters represent
-                a number ranging between 0 and 255 in hexadecimal format. You
+                a number ranging between 0 and 255 in hexadecimal format (HEX). You
                 may be familiar with RGB. RGB is essentially a way to tell the
-                computer what color you want to see. For example lets look at
-                #34AD3F. the first pair, 34 is in Hexadecimal Notation (HEX).
-                This converted to base 10 is 52. The second pair is AD in HEX
+                computer what color you want to see. For example, #34AD3F. The first pair, 34, is in HEX.
+                This converted to base 10 (numbers we count with) is 52. The second pair is AD in HEX
                 which equates to 173 in base 10. The third pair is 3F in HEX
                 which equates to 63 in base 10. <br /> <br />
                 We now have our three values: 52 173 63 . Remember the RGB
@@ -147,9 +146,9 @@ function App() {
                 255? Well, the position of the pair in the HEX value is
                 respective to the order of the RGB acronym. This means that we
                 have a value of 52 for R, a value of 173 for G, and a value of
-                63 for B. We now know how much Red Green and Blue (RGB) our
-                color contains. Based on this we can get an idea of what the
-                color will be. <br />
+                63 for B. We now know how much Red, Green, and Blue (RGB) our
+                color contains. Based on this, we can get an idea of what the
+                color will be when you mix the three. <br />
                 <br />I hope this helped! 👌
               </p>
             </div>
