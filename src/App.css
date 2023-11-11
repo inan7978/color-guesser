@@ -28,6 +28,14 @@
   margin: 20px;
   font-size: 25px;
   width: 135px;
+  align-items: center;
+  border: none;
+  background-color: lightcyan;
+  border-radius: 5px;
+}
+
+.answers:hover {
+  background-color: cyan;
 }
 .explanation {
   max-width: 500px;
